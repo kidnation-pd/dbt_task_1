@@ -1,0 +1,40 @@
+version: 2
+
+sources:
+  - name: seed__data
+    description: "Исходные данные каталога телефонов из seeds"
+    schema: public
+    loaded_at_field: _dbt_loaded_at
+
+    tables:
+      - name: smartphone_cleaned_v5
+        description: "Сырой каталог телефонов с марками и моделями"
+        identifier: smartphone_cleaned_v5
+
+        columns:
+          - name: "brand_name"
+            description: "Наименова бренда телефона"
+            tests:
+              - not_null
+
+          - name: "model"
+            description: "Название модели телефона"
+            tests:
+              - not_null
+
+          - name: "price"
+            description: "Стоимость телефона"
+            tests:
+              - not_null
+
+          - name: "processor_brand"
+            description: "Марка процессора"
+
+          - name: "num_cores"
+            description: "Количество ядер процессора"
+
+          - name: "processor_speed"
+            description: "Скорость процессора"
+
+          - name: "battery_capacity"
+            description: "Емкость батареи"
