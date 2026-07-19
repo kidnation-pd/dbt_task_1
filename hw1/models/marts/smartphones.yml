@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: mart__top_10_processors
+    description: "Топ 10 моделей процессоров по частоте использования"
+    columns:
+      - name: processor_brand
+        description: "Производитель процессора"
+        tests:
+          - not_null
+      - name: processor_speed
+        description: "Тактовая частота процессора"
+        tests:
+          - not_null
+      - name: count_processors
+        description: "Количество устройств с данным процессором"
+        tests:
+          - not_null
